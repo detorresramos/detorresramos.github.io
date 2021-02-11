@@ -1,0 +1,27 @@
+.home {
+    position: absolute;
+    left: 100px;
+    top: 408px;
+}
+
+.home h1 {
+    margin: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+.home h3 {
+    margin: 5px 0 0 17px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.home p {
+    width: 350px;
+    margin-left: 35px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
