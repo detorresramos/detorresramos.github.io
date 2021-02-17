@@ -1,24 +1,71 @@
 import '../Css/navbar.css';
+import { Link } from 'react-scroll';
 
 function Navbar() {
   return (
     <div className="navbar">
-        <a><img src="Logo.svg"/></a>
+        <Link smooth to=""><img className="nav-element" src="Logo.svg"/></Link>
         <ul className="main-nav">
             <li className="nav-element">
-                <a>About Me</a>
+                <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                >
+                    About Me
+                </Link>
             </li>
             <li className="nav-element">
-                <a>Projects</a>
+                <Link
+                    activeClass="active"
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                >
+                    Projects
+                </Link>
             </li>
             <li className="nav-element">
-                <a>Experience</a>
+                <Link
+                    activeClass="active"
+                    to="experience"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                >
+                    Experience
+                </Link>
             </li>
             <li className="nav-element">
-                <a>Skills</a>
+                <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                >
+                    Skills
+                </Link>
             </li>
         </ul>
-        <a id="contact">Contact</a>
+        <Link
+            className="nav-element"
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            >
+            Contact
+        </Link>
     </div>
   );
 }

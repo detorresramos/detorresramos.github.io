@@ -1,5 +1,7 @@
 .navbar {
-    margin-top: 50px;
+    position: sticky;
+    height: 80px;
+    top: 0;
     margin-left: 7%;
     margin-right: 7%;
     padding: 0;
@@ -8,6 +10,7 @@
     align-items: center;
     font-weight: 500;
     font-size: 18;
+    z-index: 999;
 }
 
 .main-nav{ 
@@ -17,4 +20,8 @@
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+}
+
+.nav-element {
+    cursor: pointer;
 }

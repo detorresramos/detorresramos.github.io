@@ -1,7 +1,5 @@
 .home {
-    position: absolute;
-    left: 100px;
-    top: 408px;
+    margin: 408px 0 100px 7%;
 }
 
 .home h1 {
