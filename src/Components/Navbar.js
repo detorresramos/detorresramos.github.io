@@ -1,98 +1,100 @@
 import '../Css/navbar.css';
-import { Link } from 'react-scroll';
-import { Component } from 'react';
+import { Link, scrollToTop } from 'react-scroll';
+import { useState } from 'react';
 
-class Navbar extends Component {
+function Navbar() {
 
-    state = {
-        style: " transparent"
-    };
+    const navHeight = 80;
+
+    const [nav, setnav] = useState(false)
     
-    listenScrollEvent = e => {
+    const changeTransparency = () => {
         if (window.scrollY > 50) {
-            this.setState({ style: " not-transparent" });
+            setnav(true)
         } else {
-            this.setState({ style: " transparent" });
+            setnav(false)
         }
     };
 
-    componentDidMount() {
-        window.addEventListener("scroll", this.listenScrollEvent);
-    }
+    window.addEventListener("scroll", changeTransparency);
 
-    render() {
-        return (
-            <div className={"navbar-container" + this.state.style}>
-                <div className="navbar">
-                    <Link smooth to="">
-                        <img className="nav-element" src="Logo.svg"/>
-                    </Link>
-                    <ul className="main-nav">
-                        <li className="nav-element">
-                            <Link
-                                activeClass="active"
-                                to="about"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >
-                                About Me
-                            </Link>
-                        </li>
-                        <li className="nav-element">
-                            <Link
-                                activeClass="active"
-                                to="projects"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >
-                                Projects
-                            </Link>
-                        </li>
-                        <li className="nav-element">
-                            <Link
-                                activeClass="active"
-                                to="experience"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >
-                                Experience
-                            </Link>
-                        </li>
-                        <li className="nav-element">
-                            <Link
-                                activeClass="active"
-                                to="contact"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >
-                                Skills
-                            </Link>
-                        </li>
-                    </ul>
-                    <Link
-                        className="nav-element"
-                        activeClass="active"
-                        to="contact"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
+    return (
+        <div className={nav ? "nav not-transparent" : "nav transparent"}>
+            <div className="navbar">
+                <Link
+                    activeClass="active"
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-1200}
+                    duration={500}
+                    >
+                    <img className="nav-element" src="Logo.svg" onClick={scrollToTop}/>
+                </Link>
+                <ul className="main-nav">
+                    <li className="nav-element">
+                        <Link
+                            activeClass="active"
+                            to="about"
+                            spy={true}
+                            smooth={true}
+                            offset={-navHeight}
+                            duration={500}
                         >
-                        Contact
-                    </Link>
-                </div>
+                            About Me
+                        </Link>
+                    </li>
+                    <li className="nav-element">
+                        <Link
+                            activeClass="active"
+                            to="projects"
+                            spy={true}
+                            smooth={true}
+                            offset={-navHeight}
+                            duration={500}
+                        >
+                            Projects
+                        </Link>
+                    </li>
+                    <li className="nav-element">
+                        <Link
+                            activeClass="active"
+                            to="experience"
+                            spy={true}
+                            smooth={true}
+                            offset={-navHeight}
+                            duration={500}
+                        >
+                            Experience
+                        </Link>
+                    </li>
+                    <li className="nav-element">
+                        <Link
+                            activeClass="active"
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-navHeight}
+                            duration={500}
+                        >
+                            Skills
+                        </Link>
+                    </li>
+                </ul>
+                <Link
+                    className="nav-element"
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-navHeight}
+                    duration={500}
+                    >
+                    Contact
+                </Link>
             </div>
-        );
-    }
-  
+        </div>
+    ); 
 }
 
 export default Navbar;

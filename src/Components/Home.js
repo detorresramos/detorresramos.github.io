@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 function Home() {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <h1>David Torres</h1>
       <h3>Designer | Engineer | Innovator</h3>
       <p>
